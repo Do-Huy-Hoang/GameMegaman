@@ -5,22 +5,30 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.imageio.ImageIO;
 import javax.swing.JPanel;
+
+        
 
 public class GamePanel extends JPanel implements Runnable, KeyListener{
     private Thread thread;
     private boolean isRunning;
     private InputManger inputManager;
+    BufferedImage image;
     
     public GamePanel(){
-        inputManager = new InputManger();
+            inputManager = new InputManger();
     }
     @Override
     public void paint(Graphics g){
         g.setColor(Color.red);
         g.fillRect(0, 0, GameFrame.SCREEN_WITH, GameFrame.SCREEN_HEIGHT);
+        g.drawImage(image, 10, 10, this);
     };
 
     public void StratGame(){
@@ -31,7 +39,7 @@ public class GamePanel extends JPanel implements Runnable, KeyListener{
         }
     }
     @Override
-    public void run() {
+    public void run() {           
         long FTS = 60;
         long period = 1000*1000000/FTS;
         long beginTime;

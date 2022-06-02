@@ -6,8 +6,8 @@ package com.itp.effect;
 
 /**
  *
- * @author Asus
+ * @author Asussadasdasdasdsdasd
  */
 public class Animation {
-    
+
 }
