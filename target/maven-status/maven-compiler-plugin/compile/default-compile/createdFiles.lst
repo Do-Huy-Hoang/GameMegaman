@@ -2,6 +2,7 @@ com\itp\userinterface\GamePanel.class
 com\itp\gameobject\MegaMan.class
 com\itp\gameobject\FinalBoss.class
 com\itp\gameobject\GameObject.class
+com\itp\userinterface\InputManger.class
 com\itp\gameobject\DarkRaise.class
 com\itp\gameobject\ParticularObjectManager.class
 com\itp\gameobject\BackgroundMap.class

@@ -18,7 +18,7 @@ public class GameFrame extends JFrame{
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//bam close chuong trinh se dong
         gamepanel = new GamePanel();
         add(gamepanel);
-        
+        this.addKeyListener(gamepanel);
     }
     
     public void startGame(){

@@ -1,22 +1,22 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package com.itp.userinterface;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JPanel;
 
-/**
- *
- * @author Asus
- */
-public class GamePanel extends JPanel implements Runnable{
+public class GamePanel extends JPanel implements Runnable, KeyListener{
     private Thread thread;
     private boolean isRunning;
+    private InputManger inputManager;
+    
+    public GamePanel(){
+        inputManager = new InputManger();
+    }
     @Override
     public void paint(Graphics g){
         g.setColor(Color.red);
@@ -41,7 +41,7 @@ public class GamePanel extends JPanel implements Runnable{
         int a = 1;
         beginTime = System.nanoTime(); 
         while (isRunning) {
-            System.out.println(a++);
+            //System.out.println(a++);
             //Update
             //Render
             long deltaTiem = System.nanoTime()- beginTime;//lay thoi gian tren he thong pc
@@ -56,4 +56,23 @@ public class GamePanel extends JPanel implements Runnable{
             } catch (InterruptedException ex) {}
         }
     }
+
+    @Override
+    public void keyTyped(KeyEvent e) {
+       
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+    inputManager.processKeyPressed(e.getKeyCode());
+    
+    //khi nhan dung nut thi thuc hien lenh
+       
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+        inputManager.processKeyReleased(e.getKeyCode());
+    }
 }
+
