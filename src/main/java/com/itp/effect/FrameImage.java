@@ -29,6 +29,7 @@ public class FrameImage {
     }
     
     public void draw(Graphics2D g,int x,int y){
+       
         g.drawImage(image,x-image.getWidth()/2,y-image.getHeight()/2,null);
 
     }
@@ -55,6 +56,7 @@ public class FrameImage {
     
     public int getImageHeight(){
         return image.getHeight();
+        
     }
     
     
