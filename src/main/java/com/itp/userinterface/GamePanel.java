@@ -20,15 +20,21 @@ public class GamePanel extends JPanel implements Runnable, KeyListener{
     private boolean isRunning;
     private InputManger inputManager;
     BufferedImage image;
+    BufferedImage subImage;
     
     public GamePanel(){
             inputManager = new InputManger();
+            try{
+                this.image = ImageIO.read(new File("data/megasprite.png"));
+                subImage = image.getSubimage(2, 5, 30, 100);
+            }catch(IOException ex){
+            }
     }
     @Override
     public void paint(Graphics g){
         g.setColor(Color.red);
         g.fillRect(0, 0, GameFrame.SCREEN_WITH, GameFrame.SCREEN_HEIGHT);
-        g.drawImage(image, 10, 10, this);
+        g.drawImage(subImage, 10, 10, this);
     };
 
     public void StratGame(){
