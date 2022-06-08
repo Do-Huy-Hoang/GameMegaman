@@ -23,7 +23,7 @@ public class Animation {
     public Animation() {
        delayFrames = new ArrayList<Double>();
        beginTime = 0;
-       currentImage = 0;
+       currentFrame = 0;
        ignoreFrames = new ArrayList<Boolean>();
        frameImages = new ArrayList<FrameImage>();
        drawRectFrame = false;
