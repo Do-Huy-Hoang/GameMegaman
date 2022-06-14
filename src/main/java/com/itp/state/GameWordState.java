@@ -4,10 +4,19 @@
  */
 package com.itp.state;
 
+import com.itp.gameobject.BulletManager;
+import com.itp.gameobject.ParticularObjectManager;
+import java.awt.image.BufferedImage;
+
 /**
  *
  * @author Asus
  */
 public class GameWordState {
-    
+       private BufferedImage bufferedImage;
+       private int lastState;
+       
+       public ParticularObjectManager particularObjectManager;
+       public BulletManager bulletManager;
+               
 }
