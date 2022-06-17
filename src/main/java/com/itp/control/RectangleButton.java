@@ -1,6 +1,9 @@
 package com.itp.control;
 ///////
 import com.itp.control.Button;
+import static com.itp.control.Button.HOVER;
+import static com.itp.control.Button.NONE;
+import static com.itp.control.Button.PRESSED;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
