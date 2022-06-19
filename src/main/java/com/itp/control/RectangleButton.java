@@ -1,5 +1,4 @@
 package com.itp.control;
-///////
 import com.itp.control.Button;
 import static com.itp.control.Button.HOVER;
 import static com.itp.control.Button.NONE;
