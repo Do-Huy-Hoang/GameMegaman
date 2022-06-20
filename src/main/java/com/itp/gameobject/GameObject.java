@@ -4,10 +4,46 @@
  */
 package com.itp.gameobject;
 
+import com.itp.state.GameWordState;
+
 /**
  *
  * @author Asus
  */
-public class GameObject {
-    
+public abstract class GameObject {
+
+	private float posX;
+	private float posY;
+	
+	private GameWordState gameWorld;
+	
+	public GameObject(float x, float y, GameWordState gameWorld){
+		posX = x;
+		posY = y;
+		this.gameWorld = gameWorld;
+	}
+	
+	public void setPosX(float x){
+		posX = x;
+	}
+	
+	public float getPosX(){
+		return posX;
+	}
+	
+	public void setPosY(float y){
+		posY = y;
+	}
+	
+	public float getPosY(){
+		return posY;
+	}
+	
+	public GameWordState getGameWorld(){
+		return gameWorld;
+	}
+	
+	public abstract void Update();
+	
 }
+
