@@ -10,14 +10,14 @@ import javax.swing.JFrame;
 public class GameFrame extends JFrame{
     public static final int SCREEN_WIDTH = 1000;
     public static final int SCREEN_HEIGHT = 600;
-
+    public static  Toolkit toolkit;
     GamePanel gamePanel;
 
     public GameFrame(){
 
         super("Mega Man java game");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        Toolkit toolkit = this.getToolkit();
+        toolkit = this.getToolkit();
         Dimension solution = toolkit.getScreenSize();
 
         try {
@@ -41,10 +41,10 @@ public class GameFrame extends JFrame{
 
     }
 
-    public static void main(String arg[]){
-
-            GameFrame gameFrame = new GameFrame();
-            gameFrame.startGame();
-
-    }
+//    public static void main(String arg[]){
+//
+//            GameFrame gameFrame = new GameFrame();
+//            gameFrame.startGame();
+//
+//    }
 }
