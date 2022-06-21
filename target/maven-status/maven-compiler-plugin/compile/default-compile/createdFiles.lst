@@ -2,7 +2,6 @@ com\itp\userinterface\GamePanel.class
 com\itp\gameobject\MegaMan.class
 com\itp\gameobject\FinalBoss.class
 com\itp\gameobject\GameObject.class
-com\itp\userinterface\InputManger.class
 com\itp\gameobject\DarkRaise.class
 com\itp\gameobject\ParticularObjectManager.class
 com\itp\gameobject\BackgroundMap.class
@@ -26,6 +25,7 @@ com\itp\gameobject\YellowFlowerBullet.class
 com\itp\control\Button.class
 com\itp\gameobject\ParticularObject.class
 com\itp\gameobject\RedEyeBullet.class
+com\itp\userinterface\InputManager.class
 com\itp\effect\FrameImage.class
 com\itp\gameobject\Bullet.class
 com\itp\gameobject\BulletManager.class

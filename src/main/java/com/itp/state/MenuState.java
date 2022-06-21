@@ -98,7 +98,7 @@ public class MenuState extends State{
 //    private void actionMenu(){
 //        switch (selectedButton) {
 //            case 0:
-//                gamePanel.setState(new GameWordState(gamePanel));
+//                gamePanel.setState(new GameWorldState(gamePanel));
 //                break;
 //            case 1:
 //                System.exit(0);

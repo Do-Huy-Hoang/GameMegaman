@@ -4,7 +4,7 @@
  */
 package com.itp.gameobject;
 
-import com.itp.state.GameWordState;
+import com.itp.state.GameWorldState;
 
 /**
  *
@@ -15,9 +15,9 @@ public abstract class GameObject {
 	private float posX;
 	private float posY;
 	
-	private GameWordState gameWorld;
+	private GameWorldState gameWorld;
 	
-	public GameObject(float x, float y, GameWordState gameWorld){
+	public GameObject(float x, float y, GameWorldState gameWorld){
 		posX = x;
 		posY = y;
 		this.gameWorld = gameWorld;
@@ -39,7 +39,7 @@ public abstract class GameObject {
 		return posY;
 	}
 	
-	public GameWordState getGameWorld(){
+	public GameWorldState getGameWorld(){
 		return gameWorld;
 	}
 	

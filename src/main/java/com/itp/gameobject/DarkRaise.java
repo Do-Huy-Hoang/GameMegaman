@@ -8,7 +8,7 @@ package com.itp.gameobject;
  *
  * @author Asus
  */
-import com.itp.state.GameWordState;
+import com.itp.state.GameWorldState;
 import com.itp.effect.Animation;
 import com.itp.effect.CacheDataLoader;
 import static com.itp.gameobject.ParticularObject.LEFT_DIR;
@@ -27,7 +27,7 @@ public class DarkRaise extends ParticularObject{
     private long startTimeToShoot;
     private float x1, x2;
     
-    public DarkRaise(float x, float y, GameWordState gameWorld) {
+    public DarkRaise(float x, float y, GameWorldState gameWorld) {
         super(x, y, 127, 89, 0, 100, gameWorld);
         backAnim = CacheDataLoader.getInstance().getAnimation("darkraise");
         forwardAnim = CacheDataLoader.getInstance().getAnimation("darkraise");

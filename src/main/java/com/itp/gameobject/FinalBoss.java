@@ -8,7 +8,7 @@ package com.itp.gameobject;
  *
  * @author Asus
  */
-import com.itp.state.GameWordState;
+import com.itp.state.GameWorldState;
 import com.itp.effect.Animation;
 import com.itp.effect.CacheDataLoader;
 import java.awt.Graphics2D;
@@ -32,7 +32,7 @@ public class FinalBoss extends Human {
     private int attackIndex = 0;
     private long lastAttackTime;
     
-    public FinalBoss(float x, float y, GameWordState gameWorld) {
+    public FinalBoss(float x, float y, GameWorldState gameWorld) {
         super(x, y, 110, 150, 0.1f, 100,gameWorld);
         idleback = CacheDataLoader.getInstance().getAnimation("boss_idle");
         idleforward = CacheDataLoader.getInstance().getAnimation("boss_idle");

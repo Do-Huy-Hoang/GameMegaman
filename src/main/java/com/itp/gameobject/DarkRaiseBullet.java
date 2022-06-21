@@ -4,7 +4,7 @@
  */
 package com.itp.gameobject;
 
-import com.itp.state.GameWordState;
+import com.itp.state.GameWorldState;
 import com.itp.effect.Animation;
 import com.itp.effect.CacheDataLoader;
 import java.awt.Graphics2D;
@@ -14,7 +14,7 @@ public class DarkRaiseBullet extends Bullet{
 	
     private Animation forwardBulletAnim, backBulletAnim;
     
-    public DarkRaiseBullet(float x, float y, GameWordState gameWorld) {
+    public DarkRaiseBullet(float x, float y, GameWorldState gameWorld) {
             super(x, y, 30, 30, 1.0f, 10, gameWorld);
             forwardBulletAnim = CacheDataLoader.getInstance().getAnimation("darkraisebullet");
             backBulletAnim = CacheDataLoader.getInstance().getAnimation("darkraisebullet");

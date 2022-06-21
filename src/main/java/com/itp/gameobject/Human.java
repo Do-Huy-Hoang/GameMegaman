@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.itp.gameobject;
-import com.itp.state.GameWordState;
+import com.itp.state.GameWorldState;
 import java.awt.Rectangle;
 
 /**
@@ -26,7 +26,7 @@ public abstract class Human extends ParticularObject {
     
     public abstract void stopRun();
     
-    public Human(float x, float y, float width, float height, float mass, int blood, GameWordState gameWorld) {
+    public Human(float x, float y, float width, float height, float mass, int blood, GameWorldState gameWorld) {
         super(x, y, width, height, mass, blood, gameWorld);
         setState(ALIVE);
     }

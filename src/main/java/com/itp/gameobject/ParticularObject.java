@@ -1,22 +1,29 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package com.itp.gameobject;
 
+<<<<<<< Updated upstream
 /**
  *
  * @author Asus
  */
-import com.itp.state.GameWordState;
+import com.itp.state.GameWorldState;
 import com.itp.effect.Animation;
+=======
+import com.itp.effect.Animation;
+import com.itp.state.GameWorldState;
+>>>>>>> Stashed changes
 import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
 
+<<<<<<< Updated upstream
 public abstract class ParticularObject extends GameObject {
 
     public static final int LEAGUE_TEAM = 1;
+=======
+public abstract class ParticularObject extends GameObject{
+     public static final int LEAGUE_TEAM = 1;
+>>>>>>> Stashed changes
     public static final int ENEMY_TEAM = 2;
     
     public static final int LEFT_DIR = 0;
@@ -47,7 +54,7 @@ public abstract class ParticularObject extends GameObject {
     private long startTimeNoBeHurt;
     private long timeForNoBeHurt;
 
-    public ParticularObject(float x, float y, float width, float height, float mass, int blood, GameWordState gameWorld){
+    public ParticularObject(float x, float y, float width, float height, float mass, int blood, GameWorldState gameWorld){
 
         // posX and posY are the middle coordinate of the object
         super(x, y, gameWorld);
@@ -260,5 +267,8 @@ public abstract class ParticularObject extends GameObject {
     public abstract void draw(Graphics2D g2);
     
     public void hurtingCallback(){};
+<<<<<<< Updated upstream
 	
+=======
+>>>>>>> Stashed changes
 }
