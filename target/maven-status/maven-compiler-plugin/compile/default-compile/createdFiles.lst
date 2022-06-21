@@ -6,10 +6,12 @@ com\itp\gameobject\GameObject.class
 com\itp\gameobject\DarkRaise.class
 com\itp\gameobject\ParticularObjectManager.class
 com\itp\userinterface\Menu.class
+com\itp\userinterface\Panel.class
 com\itp\gameobject\BackgroundMap.class
 com\itp\gameobject\BlueFire.class
 com\itp\effect\Animation.class
 com\itp\gameobject\SmallRedGun.class
+com\itp\userinterface\Panel$ButtonHandler.class
 com\itp\state\MenuState.class
 com\itp\userinterface\GameFrame.class
 com\itp\gameobject\RobotRBullet.class
@@ -20,9 +22,9 @@ com\itp\gameobject\RocketBullet.class
 com\itp\state\State.class
 com\itp\gameobject\PhysicalMap.class
 com\itp\state\GameWorldState.class
+.netbeans_automatic_build
 com\itp\gameobject\Camera.class
 com\itp\gameobject\Human.class
-com\itp\userinterface\Menu$1panel.class
 com\itp\effect\CacheDataLoader.class
 com\itp\control\RectangleButton.class
 com\itp\gameobject\YellowFlowerBullet.class
