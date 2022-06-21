@@ -47,5 +47,4 @@ public class RedEyeBullet extends Bullet{
 
     @Override
     public void attack() {}
-
 }

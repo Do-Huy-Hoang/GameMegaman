@@ -258,7 +258,6 @@ public class CacheDataLoader {
             for(int i = 0;i < n; i ++){
                 
                 FrameImage frame = new FrameImage();
-                
                 while((line = br.readLine()).equals(""));
                 frame.setName(line);
                 

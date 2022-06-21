@@ -21,6 +21,7 @@ public class Panel extends JPanel {
     private ImageIcon background;
     public boolean open = false;
     private Menu menu;
+    private boolean  Open;
 
     public Panel(Menu menu) {
         this.menu = menu;
@@ -59,11 +60,13 @@ public class Panel extends JPanel {
         public void actionPerformed(ActionEvent event) {
             if (event.getSource() == b) {
                 try {
-                    open = true;
-                    GameFrame game = new GameFrame();
-                    game.startGame();
-                    game.setVisible(true);
-                    menu.disable();
+                    if (open == false) {
+                        open = true;
+                        GameFrame game = new GameFrame();
+                        game.startGame();
+                        game.setVisible(true);
+                        menu.disable();
+                    }
                 } catch (Exception ex) {
                     ex.printStackTrace();
                 }

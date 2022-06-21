@@ -15,7 +15,7 @@ import java.util.Hashtable;
  */
 public class FinalBoss extends Human {
 
-    private Animation idleforward, idleback;
+ private Animation idleforward, idleback;
     private Animation shootingforward, shootingback;
     private Animation slideforward, slideback;
     
@@ -27,7 +27,7 @@ public class FinalBoss extends Human {
     private long lastAttackTime;
     
     public FinalBoss(float x, float y, GameWorldState gameWorld) {
-        super(x, y, 110, 150, 0.1f, 100,gameWorld);
+        super(x, y, 110, 150, 0.1f, 100, gameWorld);
         idleback = CacheDataLoader.getInstance().getAnimation("boss_idle");
         idleforward = CacheDataLoader.getInstance().getAnimation("boss_idle");
         idleforward.flipAllImage();
@@ -189,7 +189,7 @@ public class FinalBoss extends Human {
                 }
             }
         }
-      
+       // drawBoundForCollisionWithEnemy(g2);
     }
     
 }

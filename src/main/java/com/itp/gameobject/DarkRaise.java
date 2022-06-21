@@ -16,7 +16,7 @@ import java.awt.Rectangle;
  */
 public class DarkRaise extends ParticularObject{
 
-    private Animation forwardAnim, backAnim;
+ private Animation forwardAnim, backAnim;
     
     private long startTimeToShoot;
     private float x1, x2;
@@ -107,5 +107,4 @@ public class DarkRaise extends ParticularObject{
         }
         //drawBoundForCollisionWithEnemy(g2);
     }
-    
 }

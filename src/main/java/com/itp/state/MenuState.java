@@ -73,7 +73,7 @@ public class MenuState extends State{
     @Override
     public void setPressedButton(int code) {
         switch (code) {
-            case KeyEvent.VK_UP:
+            case KeyEvent.VK_UP: 
                 selectedButton++;
                 if (selectedButton  >= NUMBER_OF_BUTTON) {
                     selectedButton =0;
