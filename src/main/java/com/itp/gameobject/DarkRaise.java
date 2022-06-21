@@ -1,13 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package com.itp.gameobject;
 
-/**
- *
- * @author Asus
- */
+
 import com.itp.state.GameWorldState;
 import com.itp.effect.Animation;
 import com.itp.effect.CacheDataLoader;

@@ -1,11 +1,14 @@
 
 package com.itp.gameobject;
 
+import com.itp.effect.Animation;
+import com.itp.effect.CacheDataLoader;
+import com.itp.state.GameWorldState;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
 
 
-public class RedEyeBullet {
+public class RedEyeBullet extends Bullet{
     private Animation forwardBulletAnim, backBulletAnim;
     
     public RedEyeBullet(float x, float y, GameWorldState gameWorld) {

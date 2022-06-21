@@ -9,11 +9,8 @@ import java.util.List;
 
 
 public class ParticularObjectManager {
-<<<<<<< Updated upstream
+
     protected List<ParticularObject> particularObjects;
-=======
-     protected List<ParticularObject> particularObjects;
->>>>>>> Stashed changes
 
     private GameWorldState gameWorld;
     
@@ -91,5 +88,4 @@ public class ParticularObjectManager {
                 if(!object.isObjectOutOfCameraView()) object.draw(g2);
         }
     }
-	
 }

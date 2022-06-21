@@ -1,15 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package com.gamestudio.gameobject;
 
-import com.gamestudio.state.GameWorldState;
-import com.gamestudio.effect.Animation;
-import com.gamestudio.effect.CacheDataLoader;
-import static com.gamestudio.gameobject.ParticularObject.LEFT_DIR;
-import static com.gamestudio.gameobject.ParticularObject.NOBEHURT;
+package com.itp.gameobject;
+
+import com.itp.state.GameWorldState;
+import com.itp.effect.Animation;
+import com.itp.effect.CacheDataLoader;
+import static com.itp.gameobject.ParticularObject.LEFT_DIR;
+import static com.itp.gameobject.ParticularObject.NOBEHURT;
 import java.applet.AudioClip;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;

@@ -1,8 +1,8 @@
-package com.gamestudio.gameobject;
+package com.itp.gameobject;
 
-import com.gamestudio.state.GameWorldState;
-import com.gamestudio.effect.Animation;
-import com.gamestudio.effect.CacheDataLoader;
+import com.itp.state.GameWorldState;
+import com.itp.effect.Animation;
+import com.itp.effect.CacheDataLoader;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
 

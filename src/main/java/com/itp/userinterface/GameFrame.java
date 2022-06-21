@@ -1,33 +1,50 @@
 
 package com.itp.userinterface;
 
+import com.itp.effect.CacheDataLoader;
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import java.io.IOException;
 import javax.swing.JFrame;
 
 public class GameFrame extends JFrame{
-    // khai bao bien co the truy xuat truc tiep va khong the sai
-    public static final int SCREEN_WITH =1000;
-    public static final int SCREEN_HEIGHT =600;
-    // khai bao GamePanel
-    GamePanel gamepanel;
+    public static final int SCREEN_WIDTH = 1000;
+    public static final int SCREEN_HEIGHT = 600;
+
+    GamePanel gamePanel;
+
     public GameFrame(){
-        Toolkit toolkit = this.getToolkit();//lay size cua man hinh hien tai
-        Dimension dimension = toolkit.getScreenSize();//gan size vao doi tuong toolkit
-        this.setBounds((dimension.width - SCREEN_WITH)/2, (dimension.height - SCREEN_HEIGHT)/2, SCREEN_WITH, SCREEN_HEIGHT);
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//bam close chuong trinh se dong
-        gamepanel = new GamePanel();
-        add(gamepanel);
-        this.addKeyListener(gamepanel);
+
+        super("Mega Man java game");
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        Toolkit toolkit = this.getToolkit();
+        Dimension solution = toolkit.getScreenSize();
+
+        try {
+            CacheDataLoader.getInstance().LoadData();
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+
+        this.setBounds((solution.width - SCREEN_WIDTH)/2, (solution.height - SCREEN_HEIGHT)/2, SCREEN_WIDTH, SCREEN_HEIGHT);
+
+        gamePanel = new GamePanel();
+        addKeyListener(gamePanel);
+        add(gamePanel);
+
     }
-    
+
     public void startGame(){
-        gamepanel.StratGame();
+
+            gamePanel.startGame();
+            this.setVisible(true);
+
     }
-    
-    public static void main(String[] args) {
-        GameFrame start = new GameFrame();
-        start.setVisible(true);//biull man hinh
-        start.startGame();
+
+    public static void main(String arg[]){
+
+            GameFrame gameFrame = new GameFrame();
+            gameFrame.startGame();
+
     }
 }

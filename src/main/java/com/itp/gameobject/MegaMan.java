@@ -1,6 +1,4 @@
 package com.itp.gameobject;
-<<<<<<< Updated upstream
-
 import com.itp.effect.Animation;
 import com.itp.effect.CacheDataLoader;
 import com.itp.state.GameWorldState;
@@ -11,19 +9,7 @@ import java.awt.Rectangle;
 
 
 public class MegaMan extends Human {
-   public static final int RUNSPEED = 3;
-=======
-import com.itp.effect.Animation;
-import com.itp.state.GameWorldState;
-import com.itp.effect.CacheDataLoader;
-import java.applet.AudioClip;
-import java.awt.Graphics2D;
-import java.awt.Rectangle;
-
-public class MegaMan extends Human {
-
-    public static final int RUNSPEED = 3;
->>>>>>> Stashed changes
+  public static final int RUNSPEED = 3;
     
     private Animation runForwardAnim, runBackAnim, runShootingForwarAnim, runShootingBackAnim;
     private Animation idleForwardAnim, idleBackAnim, idleShootingForwardAnim, idleShootingBackAnim;
@@ -104,7 +90,7 @@ public class MegaMan extends Human {
             }
         }
         
-        if(getIsLanding()){
+        if(isIsLanding()){
             landingBackAnim.Update(System.nanoTime());
             if(landingBackAnim.isLastFrame()) {
                 setIsLanding(false);
@@ -121,7 +107,7 @@ public class MegaMan extends Human {
         // TODO Auto-generated method stub
         Rectangle rect = getBoundForCollisionWithMap();
         
-        if(getIsDicking()){
+        if(isIsDicking()){
             rect.x = (int) getPosX() - 22;
             rect.y = (int) getPosY() - 20;
             rect.width = 44;
@@ -148,7 +134,7 @@ public class MegaMan extends Human {
                     System.out.println("Plash...");
                 }else{
                     
-                    if(getIsLanding()){
+                    if(isIsLanding()){
 
                         if(getDirection() == RIGHT_DIR){
                             landingForwardAnim.setCurrentFrame(landingBackAnim.getCurrentFrame());
@@ -161,7 +147,7 @@ public class MegaMan extends Human {
                                     g2);
                         }
 
-                    }else if(getIsJumping()){
+                    }else if(isIsJumping()){
 
                         if(getDirection() == RIGHT_DIR){
                             flyForwardAnim.Update(System.nanoTime());
@@ -179,7 +165,7 @@ public class MegaMan extends Human {
                             flyBackAnim.draw((int) (getPosX() - getGameWorld().camera.getPosX()), (int) getPosY() - (int) getGameWorld().camera.getPosY(), g2);
                         }
 
-                    }else if(getIsDicking()){
+                    }else if(isIsDicking()){
 
                         if(getDirection() == RIGHT_DIR){
                             dickForwardAnim.Update(System.nanoTime());
@@ -263,7 +249,7 @@ public class MegaMan extends Human {
     @Override
     public void jump() {
 
-        if(!getIsJumping()){
+        if(!isIsJumping()){
             setIsJumping(true);
             setSpeedY(-5.0f);           
             flyBackAnim.reset();
@@ -295,7 +281,7 @@ public class MegaMan extends Human {
 
     @Override
     public void dick() {
-        if(!getIsJumping())
+        if(!isIsLanding())
             setIsDicking(true);
     }
 
@@ -320,7 +306,7 @@ public class MegaMan extends Human {
     @Override
     public void attack() {
     
-        if(!isShooting && !getIsDicking()){
+        if(!isShooting && !isIsDicking()){
             
             shooting1.play();
             
@@ -340,7 +326,7 @@ public class MegaMan extends Human {
                     bullet.setPosY(bullet.getPosY() - 5);
                 }
             }
-            if(getIsJumping())
+            if(isIsLanding())
                 bullet.setPosY(bullet.getPosY() - 20);
             
             bullet.setTeamType(getTeamType());
@@ -357,5 +343,4 @@ public class MegaMan extends Human {
         System.out.println("Call back hurting");
         hurtingSound.play();
     }
-
 }

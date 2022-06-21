@@ -24,7 +24,7 @@ public class MenuState extends State{
     public MenuState(GamePanel gamePanel){
         super(gamePanel);
         //khai bao ham lay hinh anh co chieu rong dai bang voi cua so
-        bufferedImage = new BufferedImage(GameFrame.SCREEN_WITH,GameFrame.SCREEN_HEIGHT, BufferedImage.TYPE_INT_ARGB);
+        bufferedImage = new BufferedImage(GameFrame.SCREEN_WIDTH,GameFrame.SCREEN_HEIGHT, BufferedImage.TYPE_INT_ARGB);
         //khia bao 1 object moi co so phan tu mang
         buttons = new Button[NUMBER_OF_BUTTON];
         buttons[0]= new RectangleButton("New game",300,100,100,40,15,25, Color.ORANGE);
@@ -50,7 +50,7 @@ public class MenuState extends State{
     @Override
     public void Render() {
         if (bufferedImage == null) {
-            bufferedImage = new BufferedImage(GameFrame.SCREEN_WITH, GameFrame.SCREEN_HEIGHT, BufferedImage.TYPE_INT_ARGB);
+            bufferedImage = new BufferedImage(GameFrame.SCREEN_WIDTH, GameFrame.SCREEN_HEIGHT, BufferedImage.TYPE_INT_ARGB);
             return;
         }
         graphics = bufferedImage.getGraphics();
