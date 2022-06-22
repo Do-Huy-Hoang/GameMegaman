@@ -12,36 +12,39 @@ import java.awt.image.BufferedImage;
 
 
 public class MenuState extends State{
-    //khai bao so nut
-    public final int NUMBER_OF_BUTTON = 2;
-    private  BufferedImage bufferedImage;
-    Graphics graphics;
-    
-    private Button[] buttons;
-        private int selectedButton = 0;
-        private boolean canContinueGame = false;
+public final int NUMBER_OF_BUTTON = 2;
+    private BufferedImage bufferedImage;
+    Graphics graphicsPaint;
 
-    public MenuState(GamePanel gamePanel){
+    private Button[] buttons;
+	private int buttonSelected = 0;
+	private boolean canContinueGame = false;
+        
+    public MenuState(GamePanel gamePanel) {
         super(gamePanel);
-        //khai bao ham lay hinh anh co chieu rong dai bang voi cua so
-        bufferedImage = new BufferedImage(GameFrame.SCREEN_WIDTH,GameFrame.SCREEN_HEIGHT, BufferedImage.TYPE_INT_ARGB);
-        //khia bao 1 object moi co so phan tu mang
+        bufferedImage = new BufferedImage(GameFrame.SCREEN_WIDTH, GameFrame.SCREEN_HEIGHT, BufferedImage.TYPE_INT_ARGB);
+        
         buttons = new Button[NUMBER_OF_BUTTON];
-        buttons[0]= new RectangleButton("New game",300,100,100,40,15,25, Color.ORANGE);
-        buttons[0].setHoverBgColor(Color.BLUE);
-        buttons[0].setPressedBgColor(Color.GREEN);
-        
-        buttons[1] = new RectangleButton("Exit",300,100,100,40,15,25, Color.ORANGE);
-        buttons[1].setHoverBgColor(Color.BLUE);
-        buttons[1].setPressedBgColor(Color.GREEN);
+        buttons[0] = new RectangleButton("NEW GAME", 300, 100, 100, 40, 15, 25, Color.ORANGE);
+		buttons[0].setHoverBgColor(Color.BLUE);
+		buttons[0].setPressedBgColor(Color.GREEN);
+
+//		buttons[1] = new RectangleButton("CONTINUE", 300, 160, 100, 40, 15, 25, Color.ORANGE);
+//		buttons[1].setHoverBgColor(Color.BLUE);
+//		buttons[1].setPressedBgColor(Color.GREEN);
+		
+
+		buttons[1] = new RectangleButton("EXIT", 300, 160, 100, 40, 15, 25, Color.ORANGE);
+		buttons[1].setHoverBgColor(Color.BLUE);
+		buttons[1].setPressedBgColor(Color.GREEN);
     }
-        
+    
     @Override
     public void Update() {
-        for (int i = 0; i <NUMBER_OF_BUTTON; i++) {
-            if (i == selectedButton) {
+        for(int i = 0;i<NUMBER_OF_BUTTON;i++) {
+            if(i == buttonSelected) {
                 buttons[i].setState(Button.HOVER);
-            }else{
+            } else {
                 buttons[i].setState(Button.NONE);
             }
         }
@@ -49,20 +52,20 @@ public class MenuState extends State{
 
     @Override
     public void Render() {
-        if (bufferedImage == null) {
+        if(bufferedImage == null) {
             bufferedImage = new BufferedImage(GameFrame.SCREEN_WIDTH, GameFrame.SCREEN_HEIGHT, BufferedImage.TYPE_INT_ARGB);
             return;
         }
-        graphics = bufferedImage.getGraphics();
-        if (graphics == null) {
-            graphics = bufferedImage.getGraphics();
+        graphicsPaint = bufferedImage.getGraphics();
+        if(graphicsPaint == null) {
+            graphicsPaint = bufferedImage.getGraphics();
             return;
         }
-        graphics.setColor(Color.CYAN);
-        graphics.fillRect(0, 0, bufferedImage.getWidth(), bufferedImage.getHeight());
-        for (Button button : buttons) {
-            button.draw(graphics);
-        }
+        graphicsPaint.setColor(Color.CYAN);
+		graphicsPaint.fillRect(0, 0, bufferedImage.getWidth(), bufferedImage.getHeight());
+		for (Button bt : buttons) {
+			bt.draw(graphicsPaint);
+		}
     }
 
     @Override
@@ -72,40 +75,37 @@ public class MenuState extends State{
 
     @Override
     public void setPressedButton(int code) {
-        switch (code) {
-            case KeyEvent.VK_UP: 
-                selectedButton++;
-                if (selectedButton  >= NUMBER_OF_BUTTON) {
-                    selectedButton =0;
+        switch(code) {
+            case KeyEvent.VK_DOWN:
+                buttonSelected++;
+                if(buttonSelected >= NUMBER_OF_BUTTON) {
+                    buttonSelected = 0;
                 }
                 break;
-            case KeyEvent.VK_DOWN:
-                selectedButton--;
-                if (selectedButton < 0) {
-                    selectedButton = NUMBER_OF_BUTTON - 1;
-                }      
+            case KeyEvent.VK_UP:
+                buttonSelected--;
+                if(buttonSelected < 0) {
+                    buttonSelected = NUMBER_OF_BUTTON - 1;
+                }
                 break;
-            default:
-                throw new AssertionError();
+            case KeyEvent.VK_ENTER:
+                actionMenu();
+                break;
         }
     }
 
     @Override
-    public void setReleasedButton(int code) {
-        
+    public void setReleasedButton(int code) {}
+    
+    private void actionMenu() {
+        switch(buttonSelected) {
+            case 0:
+                gamePanel.setState(new GameWorldState(gamePanel));
+                break;
+           
+            case 1:
+                System.exit(0);
+                break;
+        }
     }
-    
-//    private void actionMenu(){
-//        switch (selectedButton) {
-//            case 0:
-//                gamePanel.setState(new GameWorldState(gamePanel));
-//                break;
-//            case 1:
-//                System.exit(0);
-//                break;
-//            default:
-//                throw new AssertionError();
-//        }
-//    }
-    
 }
