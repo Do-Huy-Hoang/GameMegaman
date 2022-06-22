@@ -57,7 +57,7 @@ public class GameWorldState extends State{
     public int tutorialState = INTROGAME;
     
     public int storyTutorial = 0;
-    public String[] texts1 = new String[4];
+    public String[] texts1 = new String[5];
 
     public String textTutorial;
     public int currentSize = 1;
@@ -80,6 +80,7 @@ public class GameWorldState extends State{
                 + "and we lived in the scare in that 10 years....";
         texts1[2] = "Now is the time for us, kill it and get freedom!....";
         texts1[3] = "      LET'S GO!.....";
+        texts1[4] = "A: Shoot          Space: Leap\n<- : Move left      -> : Move right";
         textTutorial = texts1[0];
 
         
@@ -416,7 +417,7 @@ public class GameWorldState extends State{
                     bgMusic.loop();
                 }
                 if(state == GameWorldState.TUTORIAL && storyTutorial >= 1){
-                    if(storyTutorial<=3){
+                    if(storyTutorial<=4){
                         storyTutorial ++;
                         currentSize = 1;
                         textTutorial = texts1[storyTutorial-1];

@@ -31,7 +31,7 @@ public class Panel extends JPanel {
         // Tạo Border cho panel
         this.setBorder(new EmptyBorder(new Insets((SCREEN_HEIGHT - 60) / 2, (SCREEN_WIDTH - 60) / 2, (SCREEN_HEIGHT - 60) / 2, (SCREEN_WIDTH - 60) / 2)));
 //        panel.setBorder(new EmptyBorder(new Insets(100,(SCREEN_WIDTH-30)/2,100,(SCREEN_WIDTH-30)/2)));
-        b = new JButton("Srart");
+        b = new JButton("Start");
         b.setSize(60, 60);
         Panel.ButtonHandler handler = new Panel.ButtonHandler();
         b.addActionListener(handler);
